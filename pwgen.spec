@@ -6,6 +6,7 @@ Release:	4
 License:	GPL
 Group:		Applications/System
 Source0:	%{name}-%{version}.tar.gz
+# Source0-md5:	6a36aa061d384ede2cc432e9286437e5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
