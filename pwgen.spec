@@ -8,7 +8,8 @@ Group:		Applications/System
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	1a73657a0a10f3c3d00933036369e702
 URL:		http://sourceforge.net/projects/pwgen/
-BuildRequires:  autoconf
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,7 +25,7 @@ Program pwgen s³u¿y do generowania losowych hase³.
 %{__aclocal}
 %{__autoconf}
 %configure
-%{__make} CFLAGS="%{rpmcflags}"
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
