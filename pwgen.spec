@@ -30,7 +30,7 @@ install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1}
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}
 
-gzip 9nf README pgpkey.txt
+gzip -9nf README pgpkey.txt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
