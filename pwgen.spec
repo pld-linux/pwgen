@@ -1,12 +1,14 @@
 Summary:	Automatic Password Generator
 Summary(pl):	Generator hase³
 Name:		pwgen
-Version:	1.0
-Release:	5
+Version:	2.03
+Release:	1
 License:	GPL
 Group:		Applications/System
-Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	6a36aa061d384ede2cc432e9286437e5
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	1a73657a0a10f3c3d00933036369e702
+URL:		http://sourceforge.net/projects/pwgen/
+BuildRequires:  autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -19,6 +21,9 @@ Program pwgen s³u¿y do generowania losowych hase³.
 %setup -q
 
 %build
+%{__aclocal}
+%{__autoconf}
+%configure
 %{__make} CFLAGS="%{rpmcflags}"
 
 %install
@@ -26,14 +31,13 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 %{__make} install \
-	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
-	MANDIR=$RPM_BUILD_ROOT%{_mandir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README pgpkey.txt
+%doc ChangeLog
 %attr(755,root,root) %{_bindir}/pwgen
 %{_mandir}/man1/pwgen.1*
