@@ -28,13 +28,12 @@ install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1}
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}
 
-gzip -9nf README pgpkey.txt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README pgpkey.txt
 %attr(755,root,root) %{_bindir}/pwgen
 %{_mandir}/man1/pwgen.1*
