@@ -1,35 +1,41 @@
-Summary: Password Generator
-Name: pwgen
-Version: 1.0
-Release: 3
-Source: pwgen-1.0.tar.gz
-BuildRoot: /var/tmp/pwgen-1.0
-Copyright: GPL
-URL: http://kaputt.home.ml.org
-Group: Utilities/System
+Summary:	Automatic Password Generator
+Summary(pl):	Generator hase³
+Name:		pwgen
+Version:	1.0
+Release:	4
+Source0:	%{name}-%{version}.tar.gz
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+License:	GPL
+Group:		Applications/System
+Group(de):	Applikationen/System
+Group(pl):	Aplikacje/System
 
 %description
-Password Generator is a password generator (surprise!).
+pwgen generates random, meaningless but pronounceable passwords.
+
+%description -l pl
+Program pwgen s³u¿y do generowania losowych hasel.
 
 %prep
-%setup
-rm -rf $RPM_BUILD_ROOT/*
-mkdir -p $RPM_BUILD_ROOT/usr/{bin,man/man1}
+%setup -q
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"
 
 %install
-make install \
-BINDIR=$RPM_BUILD_ROOT/usr/bin \
-MANDIR=$RPM_BUILD_ROOT/usr/man
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/pwgen.1
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1}
+
+%{__make} install \
+BINDIR=$RPM_BUILD_ROOT%{_bindir} \
+MANDIR=$RPM_BUILD_ROOT%{_mandir}
 
 %clean
-cd ..
-rm -rf pwgen-1.0 $RPM_BUILD_ROOT/*
+rm -rf $RPM_BUILD_ROOT
 
 %files
-%attr(644, root, root) %doc COPYING INSTALL README pgpkey.txt
-%attr(644, root, root) /usr/man/man1/pwgen.1.gz
-%attr(755, root, root) /usr/bin/pwgen
+%defattr(644,root,root,755)
+%doc COPYING INSTALL README pgpkey.txt
+
+%attr(755, root, root) %{_bindir}/pwgen
+%attr(644, root, root) %{_mandir}/man1/pwgen.1*
