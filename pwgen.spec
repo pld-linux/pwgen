@@ -14,13 +14,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 pwgen generates random, meaningless but pronounceable passwords.
 
 %description -l pl
-Program pwgen s³u¿y do generowania losowych hasel.
+Program pwgen s³u¿y do generowania losowych hase³.
 
 %prep
 %setup -q
 
 %build
-%{__make} CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g}"
+%{__make} CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
