@@ -2,7 +2,7 @@ Summary:	Automatic Password Generator
 Summary(pl):	Generator hase³
 Name:		pwgen
 Version:	1.0
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/System
 Source0:	%{name}-%{version}.tar.gz
