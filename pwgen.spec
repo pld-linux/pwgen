@@ -5,7 +5,7 @@ Version:	2.03
 Release:	1
 License:	GPL
 Group:		Applications/System
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/pwgen/%{name}-%{version}.tar.gz
 # Source0-md5:	1a73657a0a10f3c3d00933036369e702
 URL:		http://sourceforge.net/projects/pwgen/
 BuildRequires:	autoconf
@@ -29,7 +29,6 @@ Program pwgen s³u¿y do generowania losowych hase³.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
