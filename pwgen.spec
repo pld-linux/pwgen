@@ -1,12 +1,12 @@
 Summary:	Automatic Password Generator
 Summary(pl):	Generator hase³
 Name:		pwgen
-Version:	2.03
+Version:	2.04
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/pwgen/%{name}-%{version}.tar.gz
-# Source0-md5:	1a73657a0a10f3c3d00933036369e702
+# Source0-md5:	c6116603f89a65d1b6ea4bdce00106fb
 URL:		http://sourceforge.net/projects/pwgen/
 BuildRequires:	autoconf
 BuildRequires:	automake
