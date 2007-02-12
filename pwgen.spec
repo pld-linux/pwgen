@@ -1,5 +1,5 @@
 Summary:	Automatic Password Generator
-Summary(pl):	Generator hase≥
+Summary(pl.UTF-8):   Generator hase≈Ç
 Name:		pwgen
 Version:	2.05
 Release:	1
@@ -15,8 +15,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 pwgen generates random, meaningless but pronounceable passwords.
 
-%description -l pl
-Program pwgen s≥uøy do generowania losowych hase≥.
+%description -l pl.UTF-8
+Program pwgen s≈Çu≈ºy do generowania losowych hase≈Ç.
 
 %prep
 %setup -q
