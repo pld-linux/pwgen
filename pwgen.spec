@@ -1,5 +1,5 @@
 Summary:	Automatic Password Generator
-Summary(pl.UTF-8):   Generator haseł
+Summary(pl.UTF-8):	Generator haseł
 Name:		pwgen
 Version:	2.05
 Release:	1
