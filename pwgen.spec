@@ -1,12 +1,12 @@
 Summary:	Automatic Password Generator
 Summary(pl.UTF-8):	Generator haseł
 Name:		pwgen
-Version:	2.05
+Version:	2.06
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/pwgen/%{name}-%{version}.tar.gz
-# Source0-md5:	b94546a346cb352054ea2d3d09f7f885
+# Source0-md5:	935aebcbe610fbc9de8125e7b7d71297
 URL:		http://sourceforge.net/projects/pwgen/
 BuildRequires:	autoconf
 BuildRequires:	automake
