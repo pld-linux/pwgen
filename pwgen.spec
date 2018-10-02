@@ -1,12 +1,12 @@
 Summary:	Automatic Password Generator
 Summary(pl.UTF-8):	Generator haseł
 Name:		pwgen
-Version:	2.06
-Release:	3
+Version:	2.08
+Release:	1
 License:	GPL
 Group:		Applications/System
-Source0:	http://dl.sourceforge.net/pwgen/%{name}-%{version}.tar.gz
-# Source0-md5:	935aebcbe610fbc9de8125e7b7d71297
+Source0:	http://vorboss.dl.sourceforge.net/project/pwgen/pwgen/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	6cfba450ac6ff72d11e88a6b0b049165
 URL:		http://sourceforge.net/projects/pwgen/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -38,6 +38,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog
+%doc debian/changelog
 %attr(755,root,root) %{_bindir}/pwgen
 %{_mandir}/man1/pwgen.1*
